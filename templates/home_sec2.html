@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baking Contest Home Page</title>
+</head>
+<body>
+    <h1>Welcome {{ username }}</h1>
+    <ul>
+        <a href="{{ url_for('my_entries') }}">Show my Contest Entry Results</a><br>
+        <a href="{{ url_for('add_entry') }}">Add new Baking Contest Entry</a><br>
+        <a href="{{ url_for('list_Results') }}">List Baking Contest Users</a><br>
+        <a href="{{ url_for('logout') }}">Log out</a><br>
+    </ul>
+</body>
+</html>

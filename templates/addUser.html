@@ -1,0 +1,43 @@
+<!-- this is the add user page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Baking Contest User</title>
+</head>
+<body>
+    <h2>Baking Contest User Information</h2>
+    <form method="POST" action="/addUser">
+        <!-- Name Field -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <!-- Age Field -->
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="1" max="100"><br>
+
+        <!-- Phone Number Field -->
+        <label for="phone_number">Phone Number:</label><br>
+        <input type="text" id="phone_number" name="phone_number"><br>
+
+
+        <!-- Security Level Field -->
+        <label for="security_level">Security Level (1-3):</label><br>
+        <input type="number" id="security_level" name="security_level" min="1" max="3"><br>
+
+        <!-- Login Password Field -->
+        <label for="login_password">Login Password:</label><br>
+        <input type="password" id="login_password" name="login_password"><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+
+    <!-- Link to Go Back to Home -->
+    <a href="/">Go Back to Home</a>
+</body>
+</html>
+
+

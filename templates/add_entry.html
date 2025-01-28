@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Contest Entry</title>
+</head>
+<body>
+    <h1>Bakery Contest Entry Information</h1>
+    <form method="POST" action="/add_entry">
+        <label for="baking_item_name">Name of Baking Item</label><br>
+        <input type="text" id="baking_item_name" name="baking_item_name"><br><br>
+
+        <label for="excellent_votes">Number of Excellent Votes</label><br>
+        <input type="number" id="excellent_votes" name="excellent_votes" min="0" value="0"><br><br>
+
+        <label for="ok_votes">Number of OK Votes</label><br>
+        <input type="number" id="ok_votes" name="ok_votes" min="0" value="0"><br><br>
+
+        <label for="bad_votes">Number of Bad Votes</label><br>
+        <input type="number" id="bad_votes" name="bad_votes" min="0" value="0"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if errors %}
+        <h2>Error(s):</h2>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if success_message %}
+        <h2>{{ success_message }}</h2>
+    {% endif %}
+</body>
+</html>

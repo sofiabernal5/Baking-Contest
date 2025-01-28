@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baking Contest Results</title>
+</head>
+<body>
+    <h1>All Baking Contest Entries</h1>
+    {% if entries %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Entry ID</th>
+                    <th>Submitted By</th>
+                    <th>Baking Item Name</th>
+                    <th>Excellent Votes</th>
+                    <th>OK Votes</th>
+                    <th>Bad Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry.entry_id }}</td> <!-- Entry ID -->
+                        <td>{{ entry.user_name }}</td> <!-- Decrypted User Name -->
+                        <td>{{ entry.baking_item_name }}</td> <!-- Baking Item Name -->
+                        <td>{{ entry.excellent_votes }}</td> <!-- Excellent Votes -->
+                        <td>{{ entry.ok_votes }}</td> <!-- OK Votes -->
+                        <td>{{ entry.bad_votes }}</td> <!-- Bad Votes -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No contest entries available.</p>
+    {% endif %}
+    <br>
+    <a href="/">Go Back to Home Page</a>
+    <a href="/logout">Log Out</a>
+</body>
+</html>
+    

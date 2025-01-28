@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Baking Contest Entries</title>
+</head>
+<body>
+    <h1>My Contest Entries</h1>
+    {% if entries %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Baking Item Name</th>
+                    <th>Excellent Votes</th>
+                    <th>OK Votes</th>
+                    <th>Bad Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry[0] }}</td>
+                        <td>{{ entry[1] }}</td>
+                        <td>{{ entry[2] }}</td>
+                        <td>{{ entry[3] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No entries found. You have not submitted any contest entries yet.</p>
+    {% endif %}
+    <a href="/">Go Back to Home Page</a>
+    <a href="/logout">Log Out</a>
+</body>
+</html>

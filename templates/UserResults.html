@@ -1,0 +1,38 @@
+<!-- posts the results when a user adds themselves -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Times New Roman';
+            margin: 20px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        .result-container p {
+            margin: 0; /* No extra spacing between lines */
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Query Result :</h2>
+    <div class="result-container">
+        {% if errors %}
+            {% for error in errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        {% elif success_message %}
+            <p>{{ success_message }}</p>
+        {% endif %}
+    </div>
+    <a href="/" class="back-link">back to home</a>
+</body>
+</html>
